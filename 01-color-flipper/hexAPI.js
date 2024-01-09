@@ -8,7 +8,28 @@ const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 const btn = document.getElementById('btn');
 const colorDisplay = document.querySelector('.color');
 
+colorDisplay.addEventListener('click', function handleClick() {
+    console.log('element clicked');
+
+    // const copyContent = async () => {
+    //     try {
+    //       await copyToClipboard(color.innerText);
+    //       console.log('Content copied to clipboard');
+    //     } catch (err) {
+    //       console.error('Failed to copy: ', err);
+    //     }
+    //  }
+
+    navigator.clipboard.readText().then((clipText) => (document.getElementById("colorCode").innerText = clipText));
+
+});
+
+
 const outputElement = document.getElementById('weather-output');
+
+
+
+
 
 btn.addEventListener('click', function() {
     let hexColor = "";
@@ -19,6 +40,8 @@ btn.addEventListener('click', function() {
 
     const apiUrl = `https://www.thecolorapi.com/id?hex=${hexColor}`;
 
+ 
+
     // Make a GET request
     fetch(apiUrl)
     .then(response => {
@@ -28,7 +51,7 @@ btn.addEventListener('click', function() {
         return response.json();
     })
     .then(data => {
-        console.log(data);
+       // console.log(data);
 
         const hexValue = data.hex.value;
         // const description = data.weather[0].description;
@@ -37,6 +60,7 @@ btn.addEventListener('click', function() {
 
         colorDisplay.textContent = `${hexValue}`;
         document.body.style.backgroundColor = `${hexValue}`;
+
 
     })
     .catch(error => {
@@ -50,16 +74,18 @@ function getRandomNumber() {
     return Math.floor(Math.random() * hex.length);
 }
 
-//TODO: Copy color code 
-function copyHexCode() {
 
-    document.getElementById("colorCode").click( {
-        console.log("is lcied");
-    });
-   
-
-
+function updateClipboard(newClip) {
+    navigator.clipboard.writeText(newClip).then(
+      () => {
+        /* clipboard successfully set */
+      },
+      () => {
+        /* clipboard write failed */
+      },
+    );
 }
-
+          
+       
 
 
