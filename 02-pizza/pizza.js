@@ -20,5 +20,5 @@ pizza.burnMouth = function() {
 }
 
 pizza.frisbee = function() {
-    console.log('Rolll baby');
+    console.log('Roll baby');
 }
