@@ -44,3 +44,7 @@ function Pizza(size, toppings, crust, sauce) {
 
 }
 
+let pizza = new Pizza("12", ["Pineapple", "peppers", "mushrooms"], "stuffed", "tomato");
+
+console.log(pizza);
+
