@@ -1,6 +1,5 @@
 // Get a dog photo from the Dog CEO API and place it in the DOM.
 
-
 // fetch(url)
 //     .then(res => res.json()) // parse response as JSON
 //     .then(data => {
