@@ -1,9 +1,10 @@
 // The user will enter a cocktail. Get cocktail name, photo and instructions and place them in the DOM
 
+document.querySelector('button').addEventListener('click', getDrinkRecipe);
 
-const outputIngredients = document.getElementById('cocktails');
+const outputIngredients = document.getElementById('cocktails')
 
-function myDrinkRecipe() {
+function getDrinkRecipe() {
     let drink = document.getElementById("drink").value;
    
     fetch(`https://thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
