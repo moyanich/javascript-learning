@@ -97,7 +97,7 @@ const spin = () => {
 
     for (let j = 0; j < COLS; j++) {
         for (let k = 0; k < ROWS; k++) {
-        
+            const reelSymbols = [...symbols];
         }
     }
 
