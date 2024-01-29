@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Calorie Counter</title>
 </head>
 <body>
@@ -52,8 +52,15 @@
                         <button type="button" id="add-entry">Add Entry</button>
                     </span>
                 </div>
+                <div>
+                    <button type="submit" id="clear">Calculate Remaining Calories</button>
+                    <button type="button" id="clear">Clear</button>
+                </div>  
             </form>
+            <div class="hide output" id="output"></div>
         </div>
+
+        <script src="script.js"></script>
     </main>
 </body>
 </html>
