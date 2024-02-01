@@ -20,8 +20,7 @@ function cleanInputString(str) {
     // console.table(cleanStrArray);
 
     const regex = /[+-\s]/g;
-    return str.replace(regex, "");
-    
+    return str.replace(regex, "");    
 }
 
 function isInvalidInput(str){
@@ -38,7 +37,7 @@ function addEntry() {
     <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
     <input type="number" min="0" id="${entryDropdown.value}-${entryNumber}-calories" placeholder="Calories" />`;
 
-    console.log(HTMLString);
+    targetInputContainer.innerHTML += HTMLString;
   
 }
 
