@@ -48,7 +48,7 @@ function getCaloriesFromInputs(list) {
     let calories = 0;
     
     for(let i = 0; i < list.length; i++) {
-
+        let currVal = list[i].value;
     }
 }
 
