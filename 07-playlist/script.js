@@ -133,6 +133,8 @@ const renderSongs = (array) => {
 
 };
 
+const getCurrentSongIndex = () => userData?.songs.indexOf(userData?.currentSong);
+
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
       playSong(userData?.songs[0].id);
@@ -141,8 +143,9 @@ playButton.addEventListener("click", () => {
     }
 });
 
-const sortSongs = () => {
+pauseButton.addEventListener("click", pauseSong);
 
+const sortSongs = () => {
 
     userData?.songs.sort((a, b) => {
         if (a.title < b.title) {
